@@ -1,0 +1,64 @@
+unit Desconto.Entidades.Campanhac;
+
+interface
+type
+  TModelEntidadeCampanhac = class
+    private
+    Fdescricao: String;
+    Fcodigo: Integer;
+    FTipoCampanha: String;
+    FTipoPatrocinio: String;
+    FdtFim: TdateTime;
+    FdtInicio: TDateTime;
+    procedure Setcodigo(const Value: Integer);
+    procedure Setdescricao(const Value: String);
+    procedure SetdtFim(const Value: TdateTime);
+    procedure SetdtInicio(const Value: TDateTime);
+    procedure SetTipoCampanha(const Value: String);
+    procedure SetTipoPatrocinio(const Value: String);
+    public
+      property codigo : Integer read Fcodigo write Setcodigo;
+      property descricao : String read Fdescricao write Setdescricao;
+      property dtInicio : TDateTime read FdtInicio write SetdtInicio;
+      property dtFim : TdateTime read FdtFim write SetdtFim;
+      property TipoPatrocinio : String read FTipoPatrocinio write SetTipoPatrocinio;
+      property TipoCampanha : String read FTipoCampanha write SetTipoCampanha;
+  end;
+
+implementation
+
+{ TModelEntidadeCampanhac }
+
+{ TModelEntidadeCampanhac }
+
+procedure TModelEntidadeCampanhac.Setcodigo(const Value: Integer);
+begin
+  Fcodigo := Value;
+end;
+
+procedure TModelEntidadeCampanhac.Setdescricao(const Value: String);
+begin
+  Fdescricao := Value;
+end;
+
+procedure TModelEntidadeCampanhac.SetdtFim(const Value: TdateTime);
+begin
+  FdtFim := Value;
+end;
+
+procedure TModelEntidadeCampanhac.SetdtInicio(const Value: TDateTime);
+begin
+  FdtInicio := Value;
+end;
+
+procedure TModelEntidadeCampanhac.SetTipoCampanha(const Value: String);
+begin
+  FTipoCampanha := Value;
+end;
+
+procedure TModelEntidadeCampanhac.SetTipoPatrocinio(const Value: String);
+begin
+  FTipoPatrocinio := Value;
+end;
+
+end.

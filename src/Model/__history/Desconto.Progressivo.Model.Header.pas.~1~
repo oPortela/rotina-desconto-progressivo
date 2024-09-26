@@ -1,0 +1,25 @@
+unit Desconto.Progressivo.Model.Header;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmFlexHeader = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmFlexHeader: TdmFlexHeader;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

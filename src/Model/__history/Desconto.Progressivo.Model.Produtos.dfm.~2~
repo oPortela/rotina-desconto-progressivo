@@ -1,0 +1,17 @@
+object dmProdutos: TdmProdutos
+  Height = 480
+  Width = 640
+  object dsCampanha: TUniDataSource
+    DataSet = SQLProdutos
+    Left = 280
+    Top = 165
+  end
+  object SQLProdutos: TUniQuery
+    Connection = dmConexao.SQLConexao
+    SQL.Strings = (
+      'select * from pcdescontoc'
+      '')
+    Left = 168
+    Top = 165
+  end
+end

@@ -1,0 +1,43 @@
+object dmCampanhac: TdmCampanhac
+  Height = 480
+  Width = 640
+  object sqlCampanhaC: TFDQuery
+    Connection = dmConexao.SQLConexao
+    Left = 208
+    Top = 120
+  end
+  object dspCampanhaC: TDataSetProvider
+    DataSet = sqlCampanhaC
+    Left = 328
+    Top = 120
+  end
+  object cdsCampanhaC: TClientDataSet
+    Aggregates = <>
+    CommandText = 'select * from pcdescontoc'
+    Params = <>
+    ProviderName = 'dspCampanhaC'
+    Left = 448
+    Top = 120
+    object cdsCampanhaCCODIGO: TLargeintField
+      FieldName = 'CODIGO'
+      Required = True
+    end
+    object cdsCampanhaCDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Required = True
+      Size = 40
+    end
+    object cdsCampanhaCDTINICIO: TDateField
+      FieldName = 'DTINICIO'
+      Required = True
+    end
+    object cdsCampanhaCDTFIM: TDateField
+      FieldName = 'DTFIM'
+      Required = True
+    end
+    object cdsCampanhaCCODFILIAL: TStringField
+      FieldName = 'CODFILIAL'
+      Size = 2
+    end
+  end
+end

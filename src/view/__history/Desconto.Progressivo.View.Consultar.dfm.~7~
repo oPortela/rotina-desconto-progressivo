@@ -1,0 +1,57 @@
+inherited frmCadastro: TfrmCadastro
+  BorderIcons = [biSystemMenu]
+  ClientHeight = 581
+  ClientWidth = 992
+  ExplicitWidth = 1008
+  ExplicitHeight = 620
+  TextHeight = 17
+  inherited pnlPrincipal: TPanel
+    Width = 992
+    Height = 581
+    inherited CardPanel1: TCardPanel
+      Width = 992
+      Height = 581
+      inherited cardConsulta: TCard
+        Width = 992
+        Height = 581
+        inherited pnlPesquisar: TPanel
+          Width = 992
+          Color = clMenuHighlight
+          inherited Label3: TLabel
+            Left = 391
+            ExplicitLeft = 391
+          end
+          inherited edtPesquisar: TEdit
+            Color = clWhite
+          end
+          inherited DateTimePicker1: TDateTimePicker
+            Left = 391
+            Width = 105
+            ExplicitLeft = 391
+            ExplicitWidth = 105
+          end
+          inherited DateTimePicker2: TDateTimePicker
+            Width = 105
+            ExplicitWidth = 105
+          end
+        end
+        inherited pnlGrid: TPanel
+          Width = 992
+          inherited DBGrid1: TDBGrid
+            Width = 990
+          end
+        end
+        inherited pnlBotoes: TPanel
+          Width = 992
+          Height = 132
+        end
+      end
+      inherited cardCadastro: TCard
+        Width = 992
+        Height = 581
+        ExplicitWidth = 837
+        ExplicitHeight = 524
+      end
+    end
+  end
+end

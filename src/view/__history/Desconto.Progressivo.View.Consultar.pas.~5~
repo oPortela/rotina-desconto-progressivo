@@ -1,0 +1,28 @@
+unit Desconto.Progressivo.View.Consultar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Desconto.Progressivo.View.Cadastro,
+  Data.DB, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls, Vcl.StdCtrls, Vcl.WinXPanels,
+  Vcl.ExtCtrls;
+
+type
+  TfrmCadastro = class(TfrmCadastro123)
+    lblCodigo: TLabel;
+    edtCodigo: TEdit;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmCadastro: TfrmCadastro;
+
+implementation
+
+{$R *.dfm}
+
+end.

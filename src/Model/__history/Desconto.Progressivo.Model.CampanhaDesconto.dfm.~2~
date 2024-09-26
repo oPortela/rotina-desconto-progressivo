@@ -1,0 +1,4 @@
+object dmCampanhaDesconto: TdmCampanhaDesconto
+  Height = 480
+  Width = 640
+end

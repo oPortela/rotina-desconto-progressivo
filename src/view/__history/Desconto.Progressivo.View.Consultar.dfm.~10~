@@ -1,0 +1,101 @@
+inherited frmCadastro: TfrmCadastro
+  BorderIcons = [biSystemMenu]
+  ClientHeight = 581
+  ClientWidth = 992
+  ExplicitWidth = 1008
+  ExplicitHeight = 620
+  TextHeight = 17
+  inherited pnlPrincipal: TPanel
+    Width = 992
+    Height = 581
+    inherited CardPanel1: TCardPanel
+      Width = 992
+      Height = 581
+      inherited cardConsulta: TCard
+        Width = 992
+        Height = 581
+        inherited pnlPesquisar: TPanel
+          Width = 992
+          Color = clBtnFace
+          ExplicitTop = -5
+          ExplicitWidth = 992
+          inherited Label1: TLabel
+            Left = 168
+            Width = 57
+            Caption = 'Descri'#231#227'o'
+            ExplicitLeft = 168
+            ExplicitWidth = 57
+          end
+          inherited Label2: TLabel
+            Left = 608
+            ExplicitLeft = 608
+          end
+          inherited Label3: TLabel
+            Left = 495
+            ExplicitLeft = 495
+          end
+          object lblCodigo: TLabel [3]
+            Left = 32
+            Top = 14
+            Width = 93
+            Height = 17
+            Caption = 'C'#243'd. Campanha'
+            Color = clWhite
+            Font.Charset = DEFAULT_CHARSET
+            Font.Color = clBlack
+            Font.Height = -13
+            Font.Name = 'Segoe UI'
+            Font.Style = []
+            ParentColor = False
+            ParentFont = False
+          end
+          inherited edtPesquisar: TEdit
+            Left = 168
+            Color = clWhite
+            ExplicitLeft = 168
+          end
+          inherited Button1: TButton
+            Left = 872
+            ExplicitLeft = 872
+          end
+          inherited DateTimePicker1: TDateTimePicker
+            Left = 495
+            Width = 105
+            ExplicitLeft = 495
+            ExplicitWidth = 105
+          end
+          inherited DateTimePicker2: TDateTimePicker
+            Left = 608
+            Width = 105
+            ExplicitLeft = 608
+            ExplicitWidth = 105
+          end
+          object edtCodigo: TEdit
+            Left = 32
+            Top = 37
+            Width = 105
+            Height = 25
+            Color = clWhite
+            TabOrder = 4
+          end
+        end
+        inherited pnlGrid: TPanel
+          Width = 992
+          inherited DBGrid1: TDBGrid
+            Width = 990
+          end
+        end
+        inherited pnlBotoes: TPanel
+          Width = 992
+          Height = 132
+        end
+      end
+      inherited cardCadastro: TCard
+        Width = 992
+        Height = 581
+        ExplicitWidth = 837
+        ExplicitHeight = 524
+      end
+    end
+  end
+end

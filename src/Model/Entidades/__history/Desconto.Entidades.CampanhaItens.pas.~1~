@@ -1,0 +1,13 @@
+unit Desconto.Entidades.CampanhaItens;
+
+interface
+type
+  TModelCampanhaItem = class
+    private
+
+    public
+  end;
+
+implementation
+
+end.

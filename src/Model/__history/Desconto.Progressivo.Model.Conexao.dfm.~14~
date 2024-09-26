@@ -1,0 +1,14 @@
+object dmConexao: TdmConexao
+  OnCreate = DataModuleCreate
+  Height = 480
+  Width = 640
+  object SQLConexao: TUniConnection
+    ProviderName = 'Oracle'
+    Username = 'TESTE'
+    Server = 'GOIAS'
+    Connected = True
+    Left = 280
+    Top = 120
+    EncryptedPassword = '8BFF9AFF8CFF8BFF9AFF'
+  end
+end

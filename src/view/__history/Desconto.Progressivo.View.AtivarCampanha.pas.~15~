@@ -1,0 +1,58 @@
+unit Desconto.Progressivo.View.AtivarCampanha;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.Mask,
+  System.Notification, Vcl.ComCtrls, System.ImageList, Vcl.ImgList;
+
+type
+  TfrmAtivarCampanha = class(TForm)
+    Panel1: TPanel;
+    ImageList2: TImageList;
+    Panel2: TPanel;
+    Label1: TLabel;
+    edtDescricao: TEdit;
+    Label2: TLabel;
+    edtCodigo: TEdit;
+    dateInicio: TDateTimePicker;
+    dateFim: TDateTimePicker;
+    Label3: TLabel;
+    Label4: TLabel;
+    btnAlterar: TButton;
+    Button1: TButton;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure pesquisarCampanha(Codigo : String);
+  end;
+
+var
+  frmAtivarCampanha: TfrmAtivarCampanha;
+
+implementation
+
+uses
+  Desconto.Progressivo.Model.Campanhac;
+
+{$R *.dfm}
+
+{ TfrmAtivarCampanha }
+
+procedure TfrmAtivarCampanha.pesquisarCampanha(Codigo: String);
+begin
+  dmCampanha.SQLCampanha.SQL.Clear;
+  dmCampanha.SQLCampanha.Close;
+  dmCampanha.SQLCampanha.SQL.Text := 'SELECT CODIGO, DESCRICAO, DTINICIO, DTFIM FROM PCDESCONTOC WHERE CODIGO = :CODCAMPANHA;';
+  dmCampanha.SQLCampanha.ParamByName('CODDESCONTO').AsString := Codigo;
+  dmCampanha.SQLCampanha.Open;
+
+  edtCodigo.Text := dmCampanha.SQLCampanha.FieldByName('CODIGO').AsString;
+  edtDescricao.Text := dmCampanha.SQLCampanha.FieldByName('DESCRICAO').AsString;
+  dateInicio.DateTime := dmCampanha.SQLCampanha.FieldByName('DTINICIO').AsDateTime;
+  dateFim.DateTime := dmCampanha.SQLCampanha.FieldByName('DTFIM').AsDateTime;
+end;
+
+end.

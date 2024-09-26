@@ -1,0 +1,33 @@
+unit finan.view.Contas.Pagar;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, Vcl.ExtCtrls,
+  Vcl.Imaging.jpeg;
+
+type
+  TfrmPrincipal = class(TForm)
+    MainMenu1: TMainMenu;
+    menuCadastro: TMenuItem;
+    m: TMenuItem;
+    menuAjuda: TMenuItem;
+    mnuDescontoProgressivo: TMenuItem;
+    mnuRelatorioVenda: TMenuItem;
+    Panel1: TPanel;
+    Image1: TImage;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmPrincipal: TfrmPrincipal;
+
+implementation
+
+{$R *.dfm}
+
+end.

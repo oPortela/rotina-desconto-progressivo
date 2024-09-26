@@ -1,0 +1,17 @@
+object DataModule1: TDataModule1
+  Height = 480
+  Width = 640
+  object dsCampanha: TUniDataSource
+    DataSet = SQLCampanhaItens
+    Left = 280
+    Top = 165
+  end
+  object SQLCampanhaItens: TUniQuery
+    Connection = dmConexao.SQLConexao
+    SQL.Strings = (
+      'select * from pcdescontoi'
+      '')
+    Left = 168
+    Top = 165
+  end
+end

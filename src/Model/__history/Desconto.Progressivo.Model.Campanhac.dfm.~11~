@@ -1,0 +1,109 @@
+object dmCampanhac: TdmCampanhac
+  Height = 480
+  Width = 640
+  object SQLCampanhac: TFDQuery
+    Active = True
+    Connection = dmConexao.SQLConexao
+    SQL.Strings = (
+      'select * from pcdescontoc')
+    Left = 216
+    Top = 128
+  end
+  object dspCampanhac: TDataSetProvider
+    DataSet = SQLCampanhac
+    Left = 328
+    Top = 128
+  end
+  object cdsCampanhac: TClientDataSet
+    Aggregates = <>
+    Params = <>
+    ProviderName = 'dspCampanhac'
+    Left = 456
+    Top = 128
+    object cdsCampanhacCODIGO: TLargeintField
+      FieldName = 'CODIGO'
+      Required = True
+    end
+    object cdsCampanhacDESCRICAO: TStringField
+      FieldName = 'DESCRICAO'
+      Required = True
+      Size = 40
+    end
+    object cdsCampanhacDTINICIO: TDateField
+      FieldName = 'DTINICIO'
+      Required = True
+    end
+    object cdsCampanhacDTFIM: TDateField
+      FieldName = 'DTFIM'
+      Required = True
+    end
+    object cdsCampanhacTIPOPATROCINIO: TStringField
+      FieldName = 'TIPOPATROCINIO'
+      Size = 1
+    end
+    object cdsCampanhacTIPOCAMPANHA: TStringField
+      FieldName = 'TIPOCAMPANHA'
+      Size = 3
+    end
+    object cdsCampanhacTIPODESCONTO: TStringField
+      FieldName = 'TIPODESCONTO'
+      Size = 1
+    end
+    object cdsCampanhacUTILIZACODPRODPRINC: TStringField
+      FieldName = 'UTILIZACODPRODPRINC'
+      Size = 1
+    end
+    object cdsCampanhacUTILIZACODCLIPRINC: TStringField
+      FieldName = 'UTILIZACODCLIPRINC'
+      Size = 1
+    end
+    object cdsCampanhacCODFILIAL: TStringField
+      FieldName = 'CODFILIAL'
+      Size = 2
+    end
+    object cdsCampanhacNAODEBITCCRCA: TStringField
+      FieldName = 'NAODEBITCCRCA'
+      Size = 1
+    end
+    object cdsCampanhacCREDITAPOLITICA: TStringField
+      FieldName = 'CREDITAPOLITICA'
+      Size = 1
+    end
+    object cdsCampanhacCOMBOCONTINUO: TStringField
+      FieldName = 'COMBOCONTINUO'
+      Size = 1
+    end
+    object cdsCampanhacALTERARPTABELA: TStringField
+      FieldName = 'ALTERARPTABELA'
+      Size = 1
+    end
+    object cdsCampanhacPERCFORNEC: TLargeintField
+      FieldName = 'PERCFORNEC'
+    end
+    object cdsCampanhacCAMPANHAPARCIAL: TStringField
+      FieldName = 'CAMPANHAPARCIAL'
+      Size = 1
+    end
+    object cdsCampanhacUTILIZAGRUPOATIVACAO: TStringField
+      FieldName = 'UTILIZAGRUPOATIVACAO'
+      Size = 1
+    end
+    object cdsCampanhacNUMVERBA: TIntegerField
+      FieldName = 'NUMVERBA'
+    end
+    object cdsCampanhacPERCCUSTFORNEC: TLargeintField
+      FieldName = 'PERCCUSTFORNEC'
+    end
+    object cdsCampanhacCODGRUPOCAMPANHA: TIntegerField
+      FieldName = 'CODGRUPOCAMPANHA'
+    end
+    object cdsCampanhacPARTNER_ID: TIntegerField
+      FieldName = 'PARTNER_ID'
+    end
+    object cdsCampanhacIONSYNC: TStringField
+      FieldName = 'IONSYNC'
+      FixedChar = True
+      Size = 1
+    end
+  end
+end

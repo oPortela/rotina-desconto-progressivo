@@ -1,0 +1,25 @@
+unit Desconto.Progressivo.Model.CampanhaDesconto;
+
+interface
+
+uses
+  System.SysUtils, System.Classes;
+
+type
+  TdmPcdesconto = class(TDataModule)
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmPcdesconto: TdmPcdesconto;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.

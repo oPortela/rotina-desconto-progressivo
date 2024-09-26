@@ -1,0 +1,56 @@
+unit Desconto.Progressivo.View.AlteracaoGrupoAtivacao;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls, Vcl.ComCtrls,
+  System.ImageList, Vcl.ImgList;
+
+type
+  TfrmAlterarGrupoAtivacao = class(TForm)
+    Panel1: TPanel;
+    pnlTitulo: TPanel;
+    pnlPrincipal: TPanel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label6: TLabel;
+    edtCodGrupo: TEdit;
+    edtDescricao: TEdit;
+    edtQuantidade: TEdit;
+    pnlRodape: TPanel;
+    btnCancelar: TButton;
+    btnAlterarFlexHeader: TButton;
+    ImageList2: TImageList;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+    procedure alterarGrupoAtivacao(Codigo : String);
+  end;
+
+var
+  frmAlterarGrupoAtivacao: TfrmAlterarGrupoAtivacao;
+
+implementation
+
+uses
+  Desconto.Progressivo.Model.GrupoAtivacao;
+
+{$R *.dfm}
+
+{ TfrmAlterarGrupoAtivacao }
+
+procedure TfrmAlterarGrupoAtivacao.alterarGrupoAtivacao(Codigo: String);
+begin
+  dmGrupoAtivacao.SQLGrupoAtivacao.SQL.Clear;
+  dmGrupoAtivacao.SQLGrupoAtivacao.Close;
+  dmGrupoAtivacao.SQLGrupoAtivacao.SQL.Text := 'SELECT CODGRUPOATIVACAO, QTMINIMA, DESCRICAO FROM TESTE.ionvd_campanhas_grupos_ativ WHERE CODGRUPOATIVACAO = :CODIGO';
+  dmGrupoAtivacao.SQLGrupoAtivacao.ParamByName('CODIGO').AsString := Codigo;
+  dmGrupoAtivacao.SQLGrupoAtivacao.Open;
+
+  edtCodGrupo.Text := dmGrupoAtivacao.SQLGrupoAtivacao.FieldByName('CODGRUPOATIVACAO').AsString;
+
+end;
+
+end.

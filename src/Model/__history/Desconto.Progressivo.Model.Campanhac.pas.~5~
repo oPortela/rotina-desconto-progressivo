@@ -1,0 +1,54 @@
+unit Desconto.Progressivo.Model.Campanhac;
+
+interface
+
+uses
+  System.SysUtils, System.Classes, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Datasnap.DBClient,
+  Datasnap.Provider, Data.DB, FireDAC.Comp.DataSet, FireDAC.Comp.Client,
+  Desconto.Progressivo.Model.Conexao;
+
+type
+  TdmCampanhac = class(TDataModule)
+    SQLCampanhac: TFDQuery;
+    dspCampanhac: TDataSetProvider;
+    cdsCampanhac: TClientDataSet;
+    cdsCampanhacCODIGO: TLargeintField;
+    cdsCampanhacDESCRICAO: TStringField;
+    cdsCampanhacDTINICIO: TDateField;
+    cdsCampanhacDTFIM: TDateField;
+    cdsCampanhacTIPOPATROCINIO: TStringField;
+    cdsCampanhacTIPOCAMPANHA: TStringField;
+    cdsCampanhacTIPODESCONTO: TStringField;
+    cdsCampanhacUTILIZACODPRODPRINC: TStringField;
+    cdsCampanhacUTILIZACODCLIPRINC: TStringField;
+    cdsCampanhacCODFILIAL: TStringField;
+    cdsCampanhacNAODEBITCCRCA: TStringField;
+    cdsCampanhacCREDITAPOLITICA: TStringField;
+    cdsCampanhacCOMBOCONTINUO: TStringField;
+    cdsCampanhacALTERARPTABELA: TStringField;
+    cdsCampanhacPERCFORNEC: TLargeintField;
+    cdsCampanhacCAMPANHAPARCIAL: TStringField;
+    cdsCampanhacUTILIZAGRUPOATIVACAO: TStringField;
+    cdsCampanhacNUMVERBA: TIntegerField;
+    cdsCampanhacPERCCUSTFORNEC: TLargeintField;
+    cdsCampanhacCODGRUPOCAMPANHA: TIntegerField;
+    cdsCampanhacPARTNER_ID: TIntegerField;
+    cdsCampanhacIONSYNC: TStringField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  dmCampanhac: TdmCampanhac;
+
+implementation
+
+{%CLASSGROUP 'Vcl.Controls.TControl'}
+
+{$R *.dfm}
+
+end.
