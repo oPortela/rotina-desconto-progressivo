@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Data.DB, Vcl.Grids, Desconto.Progressivo.Model.Produtos,
-  Vcl.DBGrids, Vcl.StdCtrls, System.ImageList, Vcl.ImgList;
+  Vcl.DBGrids, Vcl.StdCtrls, System.ImageList, Vcl.ImgList, Vcl.WinXCtrls;
 
 type
   TfrmProdutos = class(TForm)
@@ -16,9 +16,12 @@ type
     btnFechar: TButton;
     ImageList1: TImageList;
     btnIncluir: TButton;
-    btnExcluir: TButton;
+    btnFiltrar: TButton;
     lblNomeCampanha: TLabel;
-    procedure btnExcluirClick(Sender: TObject);
+    Button1: TButton;
+    SplitView1: TSplitView;
+    pnlGrid: TPanel;
+    procedure btnFiltrarClick(Sender: TObject);
     procedure btnFecharClick(Sender: TObject);
     procedure btnIncluirClick(Sender: TObject);
   private
@@ -39,7 +42,7 @@ uses
 
 {$R *.dfm}
 
-procedure TfrmProdutos.btnExcluirClick(Sender: TObject);
+procedure TfrmProdutos.btnFiltrarClick(Sender: TObject);
 var
   CodigoCampanha : String;
   CodigoProduto : String;

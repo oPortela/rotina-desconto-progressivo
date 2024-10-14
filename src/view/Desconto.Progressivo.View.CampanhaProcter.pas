@@ -132,7 +132,7 @@ begin
                  'null as DTMXSALTER ' +
         'FROM PCDESCONTOC DES, PCCLIENT CLI ' +
         'WHERE CLI.CODCLI in (:CODCLI) ' +
-         'and DES.CODIGO IN (46876, 46897, 46902, 46903, 46904, 46906, 46907, 46908, 47015, 47016, 47017);');
+         'and DES.CODIGO IN (46876, 46897, 46902, 46903, 46904, 46906, 46907, 46908, 47015, 47016, 47017, 47064, 47065);');
       dmClientesProcter.SQLClientesProcter.ParamByName('CODCLI').AsString := edtCodCliente.Text;
       dmClientesProcter.SQLClientesProcter.ExecSQL;
 

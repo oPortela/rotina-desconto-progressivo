@@ -53,19 +53,19 @@ object frmProdutos: TfrmProdutos
     end
     object Panel3: TPanel
       Left = 0
-      Top = 393
+      Top = 400
       Width = 630
-      Height = 65
+      Height = 58
       Align = alBottom
       BevelOuter = bvNone
       Color = 737281
       ParentBackground = False
       TabOrder = 1
       object btnFechar: TButton
-        Left = 500
+        Left = 554
         Top = 0
-        Width = 130
-        Height = 65
+        Width = 76
+        Height = 58
         Align = alRight
         Caption = 'Fechar'
         ImageAlignment = iaTop
@@ -74,12 +74,13 @@ object frmProdutos: TfrmProdutos
         Images = ImageList1
         TabOrder = 0
         OnClick = btnFecharClick
+        ExplicitLeft = 500
       end
       object btnIncluir: TButton
         Left = 0
         Top = 0
-        Width = 130
-        Height = 65
+        Width = 76
+        Height = 58
         Align = alLeft
         Caption = 'Incluir'
         ImageAlignment = iaTop
@@ -89,26 +90,42 @@ object frmProdutos: TfrmProdutos
         TabOrder = 1
         OnClick = btnIncluirClick
       end
-      object btnExcluir: TButton
-        Left = 130
+      object btnFiltrar: TButton
+        Left = 478
         Top = 0
-        Width = 130
-        Height = 65
+        Width = 76
+        Height = 58
+        Align = alRight
+        Caption = 'FIltrar'
+        ImageAlignment = iaTop
+        ImageIndex = 0
+        ImageMargins.Top = 5
+        Images = ImageList1
+        TabOrder = 2
+        OnClick = btnFiltrarClick
+        ExplicitLeft = 424
+      end
+      object Button1: TButton
+        Left = 76
+        Top = 0
+        Width = 76
+        Height = 58
         Align = alLeft
         Caption = 'Excluir'
         ImageAlignment = iaTop
         ImageIndex = 4
         ImageMargins.Top = 5
         Images = ImageList1
-        TabOrder = 2
-        OnClick = btnExcluirClick
+        TabOrder = 3
+        OnClick = btnFiltrarClick
+        ExplicitLeft = 130
       end
     end
     object gridProdutos: TDBGrid
-      Left = 0
+      Left = 200
       Top = 41
-      Width = 630
-      Height = 352
+      Width = 430
+      Height = 359
       Align = alClient
       Color = 9564800
       DataSource = dmProdutos.dsProdutos
@@ -140,6 +157,23 @@ object frmProdutos: TfrmProdutos
           Width = 299
           Visible = True
         end>
+    end
+    object SplitView1: TSplitView
+      Left = 0
+      Top = 41
+      Width = 200
+      Height = 359
+      OpenedWidth = 200
+      Placement = svpLeft
+      TabOrder = 3
+      ExplicitHeight = 264
+    end
+    object pnlGrid: TPanel
+      Left = 224
+      Top = 208
+      Width = 185
+      Height = 41
+      TabOrder = 4
     end
   end
   object ImageList1: TImageList

@@ -20,7 +20,6 @@ object frmAlteracaoPolitica: TfrmAlteracaoPolitica
     ActiveCard = Card1
     Caption = 'CardPanel1'
     TabOrder = 0
-    ExplicitHeight = 286
     object Card1: TCard
       Left = 1
       Top = 1
@@ -29,7 +28,6 @@ object frmAlteracaoPolitica: TfrmAlteracaoPolitica
       Caption = 'Card1'
       CardIndex = 0
       TabOrder = 0
-      ExplicitHeight = 284
       object Panel1: TPanel
         Left = 0
         Top = 0
@@ -38,7 +36,6 @@ object frmAlteracaoPolitica: TfrmAlteracaoPolitica
         Align = alClient
         BevelOuter = bvNone
         TabOrder = 0
-        ExplicitHeight = 284
         object pnlTitulo: TPanel
           Left = 0
           Top = 0
@@ -64,7 +61,6 @@ object frmAlteracaoPolitica: TfrmAlteracaoPolitica
           Align = alClient
           BevelOuter = bvNone
           TabOrder = 1
-          ExplicitHeight = 191
           object Label1: TLabel
             Left = 8
             Top = 68
@@ -201,7 +197,6 @@ object frmAlteracaoPolitica: TfrmAlteracaoPolitica
           Color = 737281
           ParentBackground = False
           TabOrder = 2
-          ExplicitTop = 232
           object btnCancelar: TButton
             Left = 562
             Top = 14

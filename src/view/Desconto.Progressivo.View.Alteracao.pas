@@ -39,6 +39,7 @@ type
     procedure btnCancelarClick(Sender: TObject);
   private
     { Private declarations }
+    valorAnterior : Double;
   public
     { Public declarations }
     procedure alterarPolitica(CodDesconto : String);
@@ -79,6 +80,8 @@ end;
 
 procedure TfrmAlteracaoPolitica.btnAlterarFlexHeaderClick(Sender: TObject);
 begin
+  valorAnterior := StrtoCurr(edtPerdesc.Text);
+
   if Application.MessageBox('Deseja atualizar está política de desconto?','Atenção!', MB_YESNO + MB_ICONQUESTION) = idYes then
   begin
     try
@@ -98,6 +101,17 @@ begin
       dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('CODCAMPANHAFLEX').AsString := edtCodCampanhaFlex.Text;
       dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('VLRMINIMO').AsString := edtVlrMinino.Text;
       dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('VLRMAXIMO').AsString := edtVlrMaximo.Text;
+
+      dmCampanhaDesconto.SQLCampanhaDesconto.SQL.Clear;
+      dmCampanhaDesconto.SQLCampanhaDesconto.Close;
+      dmCampanhaDesconto.SQLCampanhaDesconto.SQL.Add('INSERT INTO PCLOGALTERACAODADOS(DATA, CODROTINA, TABELA, COLUNA, VALORALFA, VALORALFAANT, OBSERVACOES, CODIGO) ' +
+                                                     'VALUES(:DATA, 9861, ''PCDESCONTO'', ''PERCDESC'', :VALORALTERADO, :VALORANTES, :OBS, :CODIGO) ');
+      dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('DATA').AsDate := Now;
+      dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('VALORALTERADO').AsString := edtPerdesc.Text;
+      dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('VALORANTES').AsCurrency := valorAnterior;
+      dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('OBS').AsString := 'Valor Anterior: ' + (valorAnterior).ToString + ', Valor Novo: ' + edtPerdesc.Text;
+      dmCampanhaDesconto.SQLCampanhaDesconto.ParamByName('CODIGO').AsString := edtCodCampanha.Text;
+
       dmCampanhaDesconto.SQLCampanhaDesconto.ExecSQL;
 
       dmConexao.SQLConexao.Commit;
